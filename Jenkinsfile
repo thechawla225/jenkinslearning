@@ -7,7 +7,7 @@ pipeline{
     {
         stage("Build")
         {
-            agnet any
+            agent any
             environment{
                 LOG_LEVEL='INFO'
             }
@@ -18,7 +18,9 @@ pipeline{
         
         stage('Test')
         {
-                echo "I can see release $RELASE but not log level $LOG_LEVEL"
+              steps{
+                echo "Hello I can see build number is $BUILD_NUMBER, but cannot see log level $LOG_LEVEL,releae is $RELEASE"
+            }
         }
     }
 }
