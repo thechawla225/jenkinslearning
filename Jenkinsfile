@@ -9,7 +9,7 @@ pipeline{
         {
             agnet any
             environment{
-                "LOG_LEVEL"='INFO'
+                LOG_LEVEL='INFO'
             }
             steps{
                 echo "Hello my build number is $BUILD_NUMBER, log level $LOG_LEVEL,releae is $RELEASE"
