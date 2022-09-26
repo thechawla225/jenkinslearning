@@ -14,10 +14,11 @@ pipeline{
             steps{
                 echo "Hello my build number is $BUILD_NUMBER, log level $LOG_LEVEL,releae is $RELEASE"
             }
-            stage('Test')
-            {
+        }
+        
+        stage('Test')
+        {
                 echo "I can see release $RELASE but not log level $LOG_LEVEL"
-            }
         }
     }
 }
