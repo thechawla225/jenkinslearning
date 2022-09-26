@@ -15,7 +15,30 @@ pipeline{
                 echo "Hello my build number is $BUILD_NUMBER, log level $LOG_LEVEL,releae is $RELEASE"
             }
         }
+
+       parallel
+       {
+        stage('linux-arm64')
+        {
+            steps{
+                echo "Buidling release ${RELEASE} for ${STAGE_NAME} with log level"
+            }
+        }
         
+        stage('linux-amd64')
+        {
+            steps{
+                echo "Buidling release ${RELEASE} for ${STAGE_NAME} with log level"
+            }
+        }
+        
+        stage('windows-amd64')
+        {
+            steps{
+                echo "Buidling release ${RELEASE} for ${STAGE_NAME} with log level"
+            }
+        }
+       } 
         stage('Test')
         {
               steps{
@@ -39,7 +62,7 @@ pipeline{
     }
     post{
         always{
-            echo "Prings whether deploy hua kee nahi hua"
+            echo "Prings whether deploy hua kee nahi hua "
         }
     }
 }
