@@ -39,7 +39,8 @@ pipeline{
         stage('Test')
         {
               steps{
-                echo "Hello I can see build number is $BUILD_NUMBER release is $RELEASE"
+                echo "Testing $RELEASE"
+                writeFile file: "test-results.txt", text: "passed"
             }
         }
         stage("Deploy")
@@ -58,8 +59,8 @@ pipeline{
         }
     }
     post{
-        always{
-            echo "Prings whether deploy hua kee nahi hua "
+        success{
+            archiveArtifacts 'test-results.txt'
         }
     }
 }
