@@ -27,7 +27,9 @@ pipeline {
             when{
                 expression {return params.RC}
             }
-            
+            steps{
+                echo "ye chala kya?"
+            }
         }
 
     }
