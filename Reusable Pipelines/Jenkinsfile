@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        VERSION - "0.1.0"
+        VERSION = "0.1.0"
         VERSION_RC = "rc.2"
     }
 
@@ -9,7 +9,7 @@ pipeline {
         stage('Audit tools'){
             steps
             {
-                
+             echo "chalo ye bhi kar lete hain"   
             }
         }
         stage('Build')
@@ -19,6 +19,6 @@ pipeline {
 
             }
         }
-        
+
     }
 }
