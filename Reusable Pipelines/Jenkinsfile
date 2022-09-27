@@ -1,3 +1,9 @@
+//this is how to reference a library
+
+library identifier: 'jenkins-pipeline-demo-library@master',
+        retriever: modernSCM([$class: 'GitSCMSource', remote: 'link'])
+
+
 pipeline {
     agent any
     environment{
