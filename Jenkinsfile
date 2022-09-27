@@ -43,8 +43,7 @@ pipeline{
                 LOG_LEVEL="INFO"
             }
             steps{
-                echo "Buidling release ${RELEASE} with log level okay .
-                ${LOG_LEVEL}"
+                echo "Buidling release ${RELEASE} with log level okay ${LOG_LEVEL}"
             }
              
         }
