@@ -4,6 +4,9 @@ pipeline {
         VERSION = "0.1.0"
         VERSION_RC = "rc.2"
     }
+    parameters {
+        booleanParam(name: 'RC', defaultValue: false, description: 'This is a release candidate?')
+    }
 
     stages{
         stage('Audit tools'){
@@ -18,6 +21,13 @@ pipeline {
                 echo "Building version: ${VERSION} with suffix: ${VERSION_RC}"
 
             }
+        }
+        stage('Publish')
+        {
+            when{
+                expression {return params.RC}
+            }
+            
         }
 
     }
