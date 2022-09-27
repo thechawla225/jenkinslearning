@@ -36,6 +36,19 @@ pipeline{
        
         }
 
+        stage('Post_Build')
+        {
+           environment
+            {
+                LOG_LEVEL="INFO"
+            }
+            steps{
+                echo "Buidling release ${RELEASE} with log level okay .
+                ${LOG_LEVEL}"
+            }
+             
+        }
+
         stage('Test')
         {
               steps{
@@ -58,6 +71,7 @@ pipeline{
             }
         }
     }
+
     post{
         success{
             archiveArtifacts 'test-results.txt'
