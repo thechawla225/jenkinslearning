@@ -44,7 +44,7 @@ pipeline{
             }
             steps{
                 echo "Buidling release ${RELEASE} with log level okay ${LOG_LEVEL}"
-                sh ''' echo "helo guys" '''
+                bat ''' echo "helo guys" '''
             }
              
         }
