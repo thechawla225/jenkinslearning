@@ -34,3 +34,10 @@ pipeline {
 
     }
 }
+
+void auditTools()
+{
+    sh '''
+    echo "is this running?"
+    '''
+}
